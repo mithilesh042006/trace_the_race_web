@@ -1,13 +1,40 @@
 <!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/src/style.css" rel="stylesheet">
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-</body>
+<html lang="en" suppressHydrationWarning>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trace The Race</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Hidden static form for Netlify's build-time detection -->
+    <form name="register" data-netlify="true" data-netlify-honeypot="bot-field" hidden netlify>
+      <input type="hidden" name="form-name" value="register" />
+      <input type="text"   name="teamName" />
+      <select name="teamSize">
+        <option>1</option><option>2</option><option>3</option>
+      </select>
+      <input type="text"   name="memberName1" />
+      <input type="text"   name="memberContact1" />
+      <input type="email"  name="memberEmail1" />
+      <input type="text"   name="memberCollege1" />
+
+      <input type="text"   name="memberName2" />
+      <input type="text"   name="memberContact2" />
+      <input type="email"  name="memberEmail2" />
+      <input type="text"   name="memberCollege2" />
+
+      <!-- Member 3 -->
+      <input type="text"   name="memberName3" />
+      <input type="text"   name="memberContact3" />
+      <input type="email"  name="memberEmail3" />
+      <input type="text"   name="memberCollege3" />
+      <!-- Honeypot -->
+      <input type="text" name="bot-field" />
+    </form>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

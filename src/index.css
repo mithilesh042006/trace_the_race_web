@@ -1,1 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap');
 @import "tailwindcss";
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background: linear-gradient(135deg, #0a0a0a, #1a0a1a);
+  color: white;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px #ff1493;
+  }
+  50% {
+    box-shadow: 0 0 30px #ff1493, 0 0 40px #800040;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Detective theme headers */
+h1, h2, h3 {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+}
+
+/* Custom select dropdown styling for dark theme */
+select option {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 8px;
+}
+
+select option:hover {
+  background-color: rgba(193, 1, 251, 0.2);
+}
+
+/* Hide scrollbars */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+@theme inline {
+  --color-primary: #ff1493;
+  --color-secondary: #800040;
+  --color-background: #0a0a0a;
+  --color-foreground: #ffffff;
+  --color-muted: #800040;
+  --color-muted-foreground: #ff1493;
+  --color-accent: #ff1493;
+  --color-accent-foreground: #ffffff;
+  --color-border: rgba(255, 20, 147, 0.3);
+  --color-input: rgba(255, 20, 147, 0.1);
+  --color-ring: #ff1493;
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --primary: #ff1493;
+  --primary-foreground: #ffffff;
+  --secondary: #800040;
+  --secondary-foreground: #ffffff;
+  --muted: #800040;
+  --muted-foreground: #ff1493;
+  --accent: #ff1493;
+  --accent-foreground: #ffffff;
+  --border: rgba(255, 20, 147, 0.3);
+  --input: rgba(255, 20, 147, 0.1);
+  --ring: #ff1493;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
