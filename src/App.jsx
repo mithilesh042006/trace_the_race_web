@@ -113,20 +113,20 @@ export default function App() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </h1>
-            
+
             {/* Main Title */}
             <h2 className="text-4xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto md:text-6xl bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
-              TRACE - THE - RACE  
+              TRACE - THE - RACE
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff1493] to-[#800040]">
-                Coding Debbuging Event
+                Coding Debugging Event
               </span>
             </h2>
-            
+
             {/* Description */}
             <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-sm md:text-base px-4 md:px-0 break-words">
               "Every bug is a clue. Every error tells a story. Join the elite detective force and solve the ultimate debugging mystery."
             </p>
-            
+
             {/* Countdown Timer in Hero */}
             <div className="bg-gradient-to-br from-black/60 to-pink-900/20 rounded-2xl p-6 md:p-8 border border-pink-500/20 backdrop-blur-sm shadow-xl shadow-pink-500/20 max-w-3xl mx-auto">
               <div className="text-pink-300 text-sm mb-4 font-semibold tracking-wide">
@@ -152,7 +152,7 @@ export default function App() {
                 </div>
               </div> */}
             </div>
-            
+
             {/* CTA Button */}
             <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
               <span className="relative inline-block overflow-hidden rounded-full p-[1.5px]">
@@ -281,7 +281,7 @@ export default function App() {
       </section>
 
 
-       {/* Evidence */}
+      {/* Evidence */}
       <section
         id="evidence"
         className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
@@ -319,7 +319,7 @@ export default function App() {
             </div>
             <div className="bg-gradient-to-br from-pink-900/30 to-black/50 p-6 rounded-xl border border-pink-500/30 hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300">
               <div className="text-3xl mb-3">🏢</div>
-              <div className="text-pink-300 font-semibold text-sm">CRIME SCENE</div>
+              <div className="text-pink-300 font-semibold text-sm">VENUE</div>
               <div className="text-white font-bold text-sm">Chamber 3, Library Block</div>
             </div>
             <div className="bg-gradient-to-br from-pink-900/30 to-black/50 p-6 rounded-xl border border-pink-500/30 hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300">
@@ -331,24 +331,24 @@ export default function App() {
         </div>
       </section>
 
-       {/* Contact */}
       {/* Contact */}
-<section
-  id="contact"
-  className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
->
-  <h2 className="text-2xl mb-6 hover:text-[#ff1493] transition-colors duration-300">
-    Need Backup? 📞
-  </h2>
-  <p className="text-sm mb-8 hover:scale-105 transition-transform duration-300">
-    Mahalakshmi P: +91 9840261279
-    <br />
-    Rubendra S: +91 8072426629
-  </p>
-</section>
+      {/* Contact */}
+      <section
+        id="contact"
+        className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
+      >
+        <h2 className="text-2xl mb-6 hover:text-[#ff1493] transition-colors duration-300">
+          Need Backup? 📞
+        </h2>
+        <p className="text-sm mb-8 hover:scale-105 transition-transform duration-300">
+          Mahalakshmi P: +91 9840261279
+          <br />
+          Rubendra S: +91 8072426629
+        </p>
+      </section>
 
 
-     
+
     </>
   );
 
