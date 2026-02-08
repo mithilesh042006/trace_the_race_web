@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BackgroundComponent from "./components/background-snippets-noise-effect11";
 import { HeroSection } from "./components/hero-section-dark";
 import CountdownTimer from "./components/countdown-timer";
+import RegistrationProgress from "./components/registration-progress";
 import RegisterPage from "./Register";
 
 export default function App() {
@@ -35,16 +36,16 @@ export default function App() {
           <div className="flex items-center">
             <img
               src="/logo.png"
-              alt="Trace the Race Logo"
+              alt="The After Effect Logo"
               className="h-6 w-auto mr-2 hover:scale-110 transition-transform duration-300"
             />
-            <div className="text-pink-400 font-bold text-1xl tracking-wide">TRACE THE RACE</div>
+            <div className="text-pink-400 font-bold text-1xl tracking-wide">THE AFTER EFFECT</div>
           </div>
           <div className="inline-flex cursor-pointer items-center justify-center rounded-full bg-white dark:bg-gray-950 text-xs font-medium backdrop-blur-3xl">
             <button
               onClick={() => navigateTo("register")}
               className="inline-flex rounded-full text-center group items-center justify-center bg-gradient-to-tr from-[#ff1493]/20 via-[#800040]/30 to-transparent text-white border-[#ff1493]/50 border-[1px] hover:bg-gradient-to-tr hover:from-[#ff1493]/30 hover:via-[#800040]/40 hover:to-transparent transition-all py-1.5 px-4">
-              START INVESTIGATION
+              JOIN NOW
             </button>
           </div>
         </div>
@@ -54,41 +55,41 @@ export default function App() {
           <div className="flex items-center">
             <img
               src="/logo.png"
-              alt="Trace the Race Logo"
+              alt="The After Effect Logo"
               className="h-12 w-auto mr-2 hover:scale-110 transition-transform duration-300"
             />
-            <div className="text-pink-400 font-bold text-2xl tracking-wide">TRACE THE RACE</div>
+            <div className="text-pink-400 font-bold text-2xl tracking-wide">THE AFTER EFFECT</div>
           </div>
           <div className="flex flex-wrap justify-center gap-6 absolute left-1/2 transform -translate-x-1/2">
             <a
               href="#about"
               className="text-white text-sm hover:text-[#ff1493] transition-all duration-300 hover:scale-110 px-3 py-2 rounded-lg hover:bg-pink-900/20 border border-transparent hover:border-pink-500/30"
             >
-              🔍 About
+              ⚡ About
             </a>
             <a
-              href="#clues"
+              href="#perks"
               className="text-white text-sm hover:text-[#ff1493] transition-all duration-300 hover:scale-110 px-3 py-2 rounded-lg hover:bg-pink-900/20 border border-transparent hover:border-pink-500/30"
             >
-              🧩 Clues
+              🎁 Perks
             </a>
             <a
               href="#rules"
               className="text-white text-sm hover:text-[#ff1493] transition-all duration-300 hover:scale-110 px-3 py-2 rounded-lg hover:bg-pink-900/20 border border-transparent hover:border-pink-500/30"
             >
-              📋 Rules
+              📋 Protocol
             </a>
             <a
-              href="#case-details"
+              href="#details"
               className="text-white text-sm hover:text-[#ff1493] transition-all duration-300 hover:scale-110 px-3 py-2 rounded-lg hover:bg-pink-900/20 border border-transparent hover:border-pink-500/30"
             >
-              📅 Case Details
+              📅 Details
             </a>
             <a
-              href="#evidence"
+              href="#rewards"
               className="text-white text-sm hover:text-[#ff1493] transition-all duration-300 hover:scale-110 px-3 py-2 rounded-lg hover:bg-pink-900/20 border border-transparent hover:border-pink-500/30"
             >
-              🏆 Evidence
+              🏆 Rewards
             </a>
           </div>
           <div className="inline-flex cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-pink-900/50 to-black/50 border border-pink-500/30 backdrop-blur-sm">
@@ -96,7 +97,7 @@ export default function App() {
               onClick={() => navigateTo("register")}
               className="inline-flex rounded-full text-center group items-center justify-center bg-gradient-to-tr from-[#ff1493]/30 via-[#800040]/40 to-transparent text-white border-[#ff1493]/60 border-[1px] hover:bg-gradient-to-tr hover:from-[#ff1493]/40 hover:via-[#800040]/50 hover:to-transparent transition-all py-3 px-8 shadow-lg shadow-pink-500/20 h-10"
             >
-              <span className="mr-2">🕵️</span> START INVESTIGATION
+              <span className="mr-2">⚡</span> JOIN THE EFFECT
             </button>
           </div>
         </div>
@@ -108,7 +109,7 @@ export default function App() {
           <div className="space-y-8 max-w-4xl leading-0 lg:leading-5 mx-auto text-center">
             {/* Mission Badge */}
             <h1 className="text-sm text-gray-600 dark:text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/20 via-gray-400/20 to-transparent dark:from-zinc-300/5 dark:via-gray-400/5 border-[2px] border-black/5 dark:border-white/5 rounded-3xl w-fit">
-              🔍 CASE OPENED: CLASSIFIED
+              ⚡ Every decision has an after effect…
               <svg className="inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -116,42 +117,27 @@ export default function App() {
 
             {/* Main Title */}
             <h2 className="text-4xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto md:text-6xl bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
-              TRACE - THE - RACE
+              THE AFTER EFFECT
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff1493] to-[#800040]">
-                Coding Debugging Event
+                {" "}Where Logic is Inherited
               </span>
             </h2>
 
             {/* Description */}
             <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-sm md:text-base px-4 md:px-0 break-words">
-              "Every bug is a clue. Every error tells a story. Join the elite detective force and solve the ultimate debugging mystery."
+              "No instructions. No walkthroughs. Just your decisions… and the echoes they leave behind."
             </p>
 
             {/* Countdown Timer in Hero */}
             <div className="bg-gradient-to-br from-black/60 to-pink-900/20 rounded-2xl p-6 md:p-8 border border-pink-500/20 backdrop-blur-sm shadow-xl shadow-pink-500/20 max-w-3xl mx-auto">
               <div className="text-pink-300 text-sm mb-4 font-semibold tracking-wide">
-                🕵️‍♂️ INVESTIGATION COUNTDOWN 🔍
+                ⏰ THE COUNTDOWN BEGINS ⚡
               </div>
-              <CountdownTimer targetDate="2025-09-25T11:00:00" />
-              {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 text-center">
-                <div className="bg-pink-900/30 rounded-lg p-3 border border-pink-500/20">
-                  <div className="text-pink-400 text-xs font-semibold">DATE</div>
-                  <div className="text-white font-bold text-sm">Sept 25, 2025</div>
-                </div>
-                <div className="bg-pink-900/30 rounded-lg p-3 border border-pink-500/20">
-                  <div className="text-pink-400 text-xs font-semibold">TIME</div>
-                  <div className="text-white font-bold text-sm">11:00 AM</div>
-                </div>
-                <div className="bg-pink-900/30 rounded-lg p-3 border border-pink-500/20">
-                  <div className="text-pink-400 text-xs font-semibold">VENUE</div>
-                  <div className="text-white font-bold text-sm">Chamber 3</div>
-                </div>
-                <div className="bg-pink-900/30 rounded-lg p-3 border border-pink-500/20">
-                  <div className="text-pink-400 text-xs font-semibold">DURATION</div>
-                  <div className="text-white font-bold text-sm">4 Hours</div>
-                </div>
-              </div> */}
+              <CountdownTimer targetDate="2026-02-25T10:00:00" />
             </div>
+
+            {/* Registration Progress Slider - Fetches real-time count from Netlify API */}
+            <RegistrationProgress maxRegistrations={30} refreshInterval={30000} />
 
             {/* CTA Button */}
             <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
@@ -162,7 +148,7 @@ export default function App() {
                     onClick={() => navigateTo("register")}
                     className="inline-flex rounded-full text-center group items-center w-full justify-center bg-gradient-to-tr from-[#ff1493]/30 via-[#800040]/40 to-transparent text-white border-[#ff1493]/60 border-[1px] hover:bg-gradient-to-tr hover:from-[#ff1493]/40 hover:via-[#800040]/50 hover:to-transparent transition-all sm:w-auto py-4 px-10"
                   >
-                    🕵️ ACCEPT MISSION
+                    ⚡ LEAVE YOUR MARK
                   </button>
                 </div>
               </span>
@@ -179,30 +165,30 @@ export default function App() {
         <div className="bg-gradient-to-br from-black/60 to-pink-900/20 rounded-3xl p-8 md:p-12 border border-pink-500/20 backdrop-blur-sm shadow-2xl shadow-pink-500/10">
           <div className="flex items-center justify-center mb-8">
             <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-700 rounded-full flex items-center justify-center mr-4">
-              <span className="text-3xl">🕵️‍♂️</span>
+              <span className="text-3xl">⚡</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold hover:text-[#ff1493] transition-colors duration-300">
-              CASE FILE: CLASSIFIED
+              MISSION BRIEFING
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8 text-left">
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <span className="text-pink-400 text-xl mt-1">🔍</span>
+                <span className="text-pink-400 text-xl mt-1">🕵️‍♂️</span>
                 <p className="text-sm md:text-base text-gray-300 leading-relaxed">
-                  Step into the shoes of a code detective and dive into the ultimate debugging adventure!
+                  You think you're building something. But here's the twist — it's not really yours. Your work will be picked up, examined, and carried forward by someone else.
                 </p>
               </div>
               <div className="flex items-start space-x-3">
-                <span className="text-pink-400 text-xl mt-1">⏰</span>
+                <span className="text-pink-400 text-xl mt-1">🔍</span>
                 <p className="text-sm md:text-base text-gray-300 leading-relaxed">
-                  Every puzzle hides a secret, every bug is a clue, and every second counts.
+                  Will your logic survive? Will your ideas make sense in another team's hands? That's the real challenge.
                 </p>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="text-pink-400 text-xl mt-1">🧩</span>
                 <p className="text-sm md:text-base text-gray-300 leading-relaxed">
-                  From mind-twisting riddles to quirky challenges, your wit and problem-solving skills will be tested.
+                  Brainstorm, design, document, debate. Chaos sneaks in. Ideas collide. Brains buzz.
                 </p>
               </div>
             </div>
@@ -210,53 +196,71 @@ export default function App() {
               <div className="flex items-start space-x-3">
                 <span className="text-pink-400 text-xl mt-1">👁️</span>
                 <p className="text-sm md:text-base text-gray-300 leading-relaxed">
-                  Can you spot the errors before they spot you?
+                  Your decisions echo. Your impact travels. Every thought, every design, every line of logic could be the clue someone else follows… or misses.
                 </p>
               </div>
               <div className="flex items-start space-x-3">
-                <span className="text-pink-400 text-xl mt-1">🏆</span>
+                <span className="text-pink-400 text-xl mt-1">🌶️</span>
                 <p className="text-sm md:text-base text-gray-300 leading-relaxed">
-                  Outsmart glitches, decode mysteries, and claim victory against time itself.
+                  Real IT vibes: teamwork, design thinking, logic, collaboration… with a dash of mystery.
                 </p>
               </div>
               <div className="bg-gradient-to-r from-pink-900/30 to-transparent p-4 rounded-lg border border-pink-500/20">
-                <div className="text-pink-300 font-semibold mb-2">🚨 MISSION BRIEFING</div>
-                <div className="text-xs text-gray-300">This is not just debugging - it's detective work at its finest.</div>
+                <div className="text-pink-300 font-semibold mb-2">⚡ THE TWIST</div>
+                <div className="text-xs text-gray-300">Build. Leave it. Watch it evolve. Fail. Surprise yourself. Your decisions don't disappear — they echo beyond you.</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Clues */}
+      {/* Challenge at a Glance */}
       <section
-        id="clues"
+        id="challenge"
+        className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
+      >
+        <h2 className="text-2xl mb-6 hover:text-[#ff1493] transition-colors duration-300">
+          🧩 Challenge at a Glance
+        </h2>
+        <div className="bg-gradient-to-br from-black/40 to-pink-900/10 rounded-2xl p-6 md:p-8 border border-pink-500/20 backdrop-blur-sm">
+          <ul className="text-sm md:text-base leading-relaxed space-y-3 text-left max-w-2xl mx-auto">
+            <li className="flex items-center gap-3"><span>🧠</span> Brainstorm, design, document, debate</li>
+            <li className="flex items-center gap-3"><span>🌀</span> Chaos sneaks in. Ideas collide. Brains buzz.</li>
+            <li className="flex items-center gap-3"><span>💼</span> Real IT vibes: teamwork, design thinking, logic, collaboration</li>
+            <li className="flex items-center gap-3"><span>🔒</span> No instructions. No spoilers. Just your decisions… and the echoes they leave behind.</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Perks */}
+      <section
+        id="perks"
         className="py-24 px-5 max-w-6xl mx-auto text-center animate-fade-in-up relative z-20"
       >
         <div className="bg-gradient-to-br from-pink-900/20 to-black/60 rounded-3xl p-8 md:p-12 border border-pink-500/20 backdrop-blur-sm shadow-2xl shadow-pink-500/10">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 hover:text-[#ff1493] transition-colors duration-300">
-            🔎 INVESTIGATION PERKS
+            🎁 INVESTIGATION PERKS
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-black/40 p-6 rounded-xl border border-pink-500/30 hover:border-pink-400/50 transition-all duration-300 hover:scale-105">
               <div className="text-3xl mb-3">🆓</div>
               <h3 className="text-pink-300 font-semibold mb-2">FREE ACCESS</h3>
-              <p className="text-xs text-gray-300">No cost to join the investigation</p>
+              <p className="text-xs text-gray-300">No cost to join the event</p>
             </div>
             <div className="bg-black/40 p-6 rounded-xl border border-pink-500/30 hover:border-pink-400/50 transition-all duration-300 hover:scale-105">
               <div className="text-3xl mb-3">☕</div>
-              <h3 className="text-pink-300 font-semibold mb-2">DETECTIVE'S FUEL</h3>
-              <p className="text-xs text-gray-300">Refreshments to keep you sharp</p>
+              <h3 className="text-pink-300 font-semibold mb-2">REFRESHMENTS</h3>
+              <p className="text-xs text-gray-300">Detective's fuel to keep you sharp</p>
             </div>
             <div className="bg-black/40 p-6 rounded-xl border border-pink-500/30 hover:border-pink-400/50 transition-all duration-300 hover:scale-105">
               <div className="text-3xl mb-3">🚌</div>
-              <h3 className="text-pink-300 font-semibold mb-2">TRANSPORT</h3>
-              <p className="text-xs text-gray-300">Easy access to crime scene</p>
+              <h3 className="text-pink-300 font-semibold mb-2">EASY ACCESS</h3>
+              <p className="text-xs text-gray-300">Convenient transport available</p>
             </div>
             <div className="bg-black/40 p-6 rounded-xl border border-pink-500/30 hover:border-pink-400/50 transition-all duration-300 hover:scale-105">
               <div className="text-3xl mb-3">🧠</div>
               <h3 className="text-pink-300 font-semibold mb-2">EVIDENCE KIT</h3>
-              <p className="text-xs text-gray-300">All investigation tools provided</p>
+              <p className="text-xs text-gray-300">All tools you need provided</p>
             </div>
           </div>
         </div>
@@ -268,54 +272,51 @@ export default function App() {
         className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
       >
         <h2 className="text-2xl mb-6 hover:text-[#ff1493] transition-colors duration-300">
-          Investigation Protocol 📋
+          👥 Investigation Protocol 📋
         </h2>
-        <ul className="text-sm leading-relaxed list-disc list-inside hover:scale-105 transition-transform duration-300">
-          <li>Each group must consist of 2-3 members</li>
-          <li>Cross-college detective partnerships welcomed</li>
-          <li>Students from 1st, 2nd and 3rd year are eligible to participate</li>
-          <li>Only approved resources and tools are allowed during the event</li>
-          <li>Individual participation is not permitted</li>
-          <li>Specific rules and tasks for each round will be announced at the beginning of that round</li>
+        <ul className="text-sm leading-relaxed list-disc list-inside hover:scale-105 transition-transform duration-300 text-left max-w-xl mx-auto space-y-2">
+          <li>Teams of 2-4 members required</li>
+          <li>Cross-year & cross-college teams welcome</li>
+          <li>Individual participation not allowed</li>
+          <li>Only approved tools/resources permitted</li>
+          <li>Specific tasks revealed during the event — no spoilers 🔒</li>
         </ul>
       </section>
 
-
-      {/* Evidence */}
+      {/* Rewards */}
       <section
-        id="evidence"
+        id="rewards"
         className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
       >
         <h2 className="text-2xl mb-6 hover:text-[#ff1493] transition-colors duration-300">
-          Case Rewards 🏆
+          🏆 Case Rewards
         </h2>
-        <ul className="text-sm leading-relaxed list-disc list-inside hover:scale-105 transition-transform duration-300">
-          <li>Detective Certificates for all participants 🎖️</li>
-          <li>Special recognition for top investigators 🥇</li>
-          {/* <li>Mystery prizes for case solvers 🎁</li> */}
-          <li>Hall of Fame entry for the best detectives 🌟</li>
+        <ul className="text-sm leading-relaxed list-disc list-inside hover:scale-105 transition-transform duration-300 text-left max-w-xl mx-auto space-y-2">
+          <li>Impact Certificates for all participants 🎖️</li>
+          <li>Special recognition for teams whose work survives the handover 🥇</li>
+          <li>Hall of Fame entry for the most resilient, clear, and clever teams 🌟</li>
         </ul>
       </section>
 
-      {/* Case Details */}
+      {/* Details */}
       <section
-        id="case-details"
+        id="details"
         className="py-24 px-5 max-w-6xl mx-auto text-center animate-fade-in-up relative z-20"
       >
         <div className="bg-gradient-to-br from-black/60 to-pink-900/20 rounded-3xl p-8 md:p-12 border border-pink-500/20 backdrop-blur-sm shadow-2xl shadow-pink-500/10">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 hover:text-[#ff1493] transition-colors duration-300">
-            📅 CASE DETAILS
+            📅 EVENT DETAILS
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-gradient-to-br from-pink-900/30 to-black/50 p-6 rounded-xl border border-pink-500/30 hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300">
               <div className="text-3xl mb-3">📅</div>
               <div className="text-pink-300 font-semibold text-sm">DATE</div>
-              <div className="text-white font-bold">25th September 2025</div>
+              <div className="text-white font-bold">25th February 2026</div>
             </div>
             <div className="bg-gradient-to-br from-pink-900/30 to-black/50 p-6 rounded-xl border border-pink-500/30 hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300">
               <div className="text-3xl mb-3">⏰</div>
               <div className="text-pink-300 font-semibold text-sm">TIME</div>
-              <div className="text-white font-bold">11:00 AM – 3:00 PM</div>
+              <div className="text-white font-bold">10:00 AM – 3:00 PM</div>
             </div>
             <div className="bg-gradient-to-br from-pink-900/30 to-black/50 p-6 rounded-xl border border-pink-500/30 hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300">
               <div className="text-3xl mb-3">🏢</div>
@@ -323,15 +324,25 @@ export default function App() {
               <div className="text-white font-bold text-sm">Chamber 3, Library Block</div>
             </div>
             <div className="bg-gradient-to-br from-pink-900/30 to-black/50 p-6 rounded-xl border border-pink-500/30 hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300">
-              <div className="text-3xl mb-3">🕰️</div>
+              <div className="text-3xl mb-3">⚡</div>
               <div className="text-pink-300 font-semibold text-sm">DURATION</div>
-              <div className="text-white font-bold text-sm">4 Hours of Investigation</div>
+              <div className="text-white font-bold text-sm">5 Hours of Impact</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact */}
+      {/* Impact Message */}
+      <section className="py-16 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20">
+        <div className="bg-gradient-to-r from-pink-900/30 to-purple-900/30 rounded-2xl p-8 border border-pink-500/20">
+          <h3 className="text-xl md:text-2xl font-bold mb-4 text-pink-300">👁️ CAN YOU LEAVE AN IMPACT?</h3>
+          <p className="text-gray-300 text-sm md:text-base">
+            Your work will be inherited. Your ideas will travel.<br />
+            Will it thrive? Fail? Surprise? Only the next team knows.
+          </p>
+        </div>
+      </section>
+
       {/* Contact */}
       <section
         id="contact"
@@ -347,12 +358,7 @@ export default function App() {
         </p>
       </section>
 
-
-
     </>
   );
 
 }
-
-
-

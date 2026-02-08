@@ -21,8 +21,8 @@ export default function RegisterPage({ onNavigate }) {
       newErrors.teamName = "Team name must be at least 3 characters";
     }
 
-    if (!teamSize || parseInt(teamSize, 10) < 2 || parseInt(teamSize, 10) > 3) {
-      newErrors.teamSize = "Team must have 2-3 members";
+    if (!teamSize || parseInt(teamSize, 10) < 2 || parseInt(teamSize, 10) > 4) {
+      newErrors.teamSize = "Team must have 2-4 members";
     }
 
     for (let i = 1; i <= parseInt(teamSize, 10); i++) {
@@ -80,8 +80,8 @@ export default function RegisterPage({ onNavigate }) {
                 {i}
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-white">Detective #{i}</h3>
-                <p className="text-xs text-pink-300/70">Team Member Details</p>
+                <h3 className="text-sm font-semibold text-white">Team Member #{i}</h3>
+                <p className="text-xs text-pink-300/70">Member Details</p>
               </div>
             </div>
 
@@ -100,7 +100,7 @@ export default function RegisterPage({ onNavigate }) {
                   onChange={handleInputChange}
                   className={`w-full px-4 py-3 bg-white/5 border-2 rounded-xl text-sm text-white placeholder-white/40 outline-none transition-all duration-300 hover:bg-white/10 ${errors[`memberName${i}`]
                     ? "border-red-500/50 focus:border-red-500"
-                    : "border-white/10 focus:border-pink-500 focus:shadow-lg focus:shadow-pink-500/20"
+                    : "border-white/10 focus:border-pink-400/60 focus:shadow-md focus:shadow-pink-500/10"
                     }`}
                   placeholder="Enter full name"
                 />
@@ -125,7 +125,7 @@ export default function RegisterPage({ onNavigate }) {
                   onChange={handleInputChange}
                   className={`w-full px-4 py-3 bg-white/5 border-2 rounded-xl text-sm text-white placeholder-white/40 outline-none transition-all duration-300 hover:bg-white/10 ${errors[`memberContact${i}`]
                     ? "border-red-500/50 focus:border-red-500"
-                    : "border-white/10 focus:border-pink-500 focus:shadow-lg focus:shadow-pink-500/20"
+                    : "border-white/10 focus:border-pink-400/60 focus:shadow-md focus:shadow-pink-500/10"
                     }`}
                   placeholder="10-digit mobile number"
                 />
@@ -150,7 +150,7 @@ export default function RegisterPage({ onNavigate }) {
                   onChange={handleInputChange}
                   className={`w-full px-4 py-3 bg-white/5 border-2 rounded-xl text-sm text-white placeholder-white/40 outline-none transition-all duration-300 hover:bg-white/10 ${errors[`memberEmail${i}`]
                     ? "border-red-500/50 focus:border-red-500"
-                    : "border-white/10 focus:border-pink-500 focus:shadow-lg focus:shadow-pink-500/20"
+                    : "border-white/10 focus:border-pink-400/60 focus:shadow-md focus:shadow-pink-500/10"
                     }`}
                   placeholder="your@email.com"
                 />
@@ -175,7 +175,7 @@ export default function RegisterPage({ onNavigate }) {
                   onChange={handleInputChange}
                   className={`w-full px-4 py-3 bg-white/5 border-2 rounded-xl text-sm text-white placeholder-white/40 outline-none transition-all duration-300 hover:bg-white/10 ${errors[`memberCollege${i}`]
                     ? "border-red-500/50 focus:border-red-500"
-                    : "border-white/10 focus:border-pink-500 focus:shadow-lg focus:shadow-pink-500/20"
+                    : "border-white/10 focus:border-pink-400/60 focus:shadow-md focus:shadow-pink-500/10"
                     }`}
                   placeholder="Your college name"
                 />
@@ -218,10 +218,10 @@ export default function RegisterPage({ onNavigate }) {
           <div className="flex items-center">
             <img
               src="/logo.png"
-              alt="Trace the Race Logo"
+              alt="The After Effect Logo"
               className="h-6 w-auto mr-2 hover:scale-110 transition-transform duration-300"
             />
-            <div className="text-pink-400 font-bold text-1xl tracking-wide">TRACE THE RACE</div>
+            <div className="text-pink-400 font-bold text-1xl tracking-wide">THE AFTER EFFECT</div>
           </div>
           <div className="inline-flex cursor-pointer items-center justify-center rounded-full bg-white dark:bg-gray-950 text-xs font-medium backdrop-blur-3xl">
             <button
@@ -238,10 +238,10 @@ export default function RegisterPage({ onNavigate }) {
           <div className="flex items-center">
             <img
               src="/logo.png"
-              alt="Trace the Race Logo"
+              alt="The After Effect Logo"
               className="h-12 w-auto mr-2 hover:scale-110 transition-transform duration-300"
             />
-            <div className="text-pink-400 font-bold text-2xl tracking-wide">TRACE THE RACE</div>
+            <div className="text-pink-400 font-bold text-2xl tracking-wide">THE AFTER EFFECT</div>
           </div>
           <div className="inline-flex cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-pink-900/50 to-black/50 border border-pink-500/30 backdrop-blur-sm">
             <button
@@ -265,10 +265,10 @@ export default function RegisterPage({ onNavigate }) {
               Registration Open
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-pink-200 to-white bg-clip-text text-transparent">
-              Join The Investigation
+              Leave Your Mark ⚡
             </h1>
             <p className="text-white/60 text-sm md:text-base max-w-lg mx-auto">
-              Assemble your detective squad and register for the ultimate debugging challenge
+              Assemble your team and register for the ultimate challenge where logic is inherited
             </p>
           </div>
 
@@ -281,12 +281,12 @@ export default function RegisterPage({ onNavigate }) {
               {/* Card header */}
               <div className="bg-gradient-to-r from-pink-900/20 via-purple-900/20 to-pink-900/20 px-6 md:px-10 py-6 border-b border-white/10">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/70 to-purple-600/70 flex items-center justify-center shadow-lg shadow-pink-500/15">
-                    <span className="text-2xl">🕵️</span>
-                  </div>
+                  {/* <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/70 to-purple-600/70 flex items-center justify-center shadow-lg shadow-pink-500/15">
+                    <span className="text-2xl">⚡</span>
+                  </div> */}
                   <div>
-                    <h2 className="text-xl md:text-2xl font-bold text-white">Detective Recruitment Form</h2>
-                    <p className="text-pink-300/60 text-sm">Complete all fields to join the mission</p>
+                    <h2 className="text-xl md:text-2xl font-bold text-white">Team Registration Form</h2>
+                    <p className="text-pink-300/60 text-sm">Complete all fields to join the event</p>
                   </div>
                 </div>
               </div>
@@ -352,9 +352,9 @@ export default function RegisterPage({ onNavigate }) {
                           onChange={handleInputChange}
                           className={`w-full px-4 py-3.5 bg-white/5 border-2 rounded-xl text-sm text-white placeholder-white/40 outline-none transition-all duration-300 hover:bg-white/10 ${errors.teamName
                             ? "border-red-500/50 focus:border-red-500"
-                            : "border-white/10 focus:border-pink-500 focus:shadow-lg focus:shadow-pink-500/20"
+                            : "border-white/10 focus:border-pink-400/60 focus:shadow-md focus:shadow-pink-500/10"
                             }`}
-                          placeholder="Enter your detective squad name"
+                          placeholder="Enter your team name"
                         />
                         {errors.teamName && (
                           <p className="text-red-400 text-xs flex items-center gap-1">
@@ -366,7 +366,7 @@ export default function RegisterPage({ onNavigate }) {
                       {/* Team Size */}
                       <div className="space-y-2">
                         <label htmlFor="teamSize" className="text-sm font-medium text-pink-200/80 flex items-center gap-2">
-                          <span>👥</span> Team Size
+                          <span>👥</span> Team Size (2-4 members)
                         </label>
                         <select
                           id="teamSize"
@@ -379,11 +379,12 @@ export default function RegisterPage({ onNavigate }) {
                           }}
                           className={`w-full px-4 py-3.5 bg-white/5 border-2 rounded-xl text-sm text-white outline-none transition-all duration-300 hover:bg-white/10 cursor-pointer ${errors.teamSize
                             ? "border-red-500/50 focus:border-red-500"
-                            : "border-white/10 focus:border-pink-500 focus:shadow-lg focus:shadow-pink-500/20"
+                            : "border-white/10 focus:border-pink-400/60 focus:shadow-md focus:shadow-pink-500/10"
                             }`}
                         >
-                          <option value="2" className="bg-gray-900">2 Detectives</option>
-                          <option value="3" className="bg-gray-900">3 Detectives</option>
+                          <option value="2" className="bg-gray-900">2 Members</option>
+                          <option value="3" className="bg-gray-900">3 Members</option>
+                          <option value="4" className="bg-gray-900">4 Members</option>
                         </select>
                         {errors.teamSize && (
                           <p className="text-red-400 text-xs flex items-center gap-1">
@@ -420,7 +421,7 @@ export default function RegisterPage({ onNavigate }) {
                         </span>
                       ) : (
                         <span className="flex items-center justify-center gap-2">
-                          <span>�</span> Submit Registration
+                          <span>⚡</span> Submit Registration
                         </span>
                       )}
                     </Button>
@@ -428,7 +429,7 @@ export default function RegisterPage({ onNavigate }) {
 
                   {/* Footer note */}
                   <p className="text-center text-white/40 text-xs">
-                    By registering, you agree to participate in the Trace The Race debugging competition
+                    By registering, you agree to participate in The After Effect event
                   </p>
                 </form>
               </div>
@@ -440,12 +441,12 @@ export default function RegisterPage({ onNavigate }) {
             <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 text-center">
               <div className="text-2xl mb-2">📅</div>
               <div className="text-xs text-white/60">Date</div>
-              <div className="text-sm font-semibold text-white">Sept 25, 2025</div>
+              <div className="text-sm font-semibold text-white">Feb 25, 2026</div>
             </div>
             <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 text-center">
               <div className="text-2xl mb-2">⏰</div>
               <div className="text-xs text-white/60">Time</div>
-              <div className="text-sm font-semibold text-white">11:00 AM</div>
+              <div className="text-sm font-semibold text-white">10:00 AM</div>
             </div>
             <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 text-center">
               <div className="text-2xl mb-2">📍</div>

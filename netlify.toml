@@ -1,4 +1,23 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[functions]
+  node_bundler = "esbuild"
+
+# API function redirect - MUST come before SPA fallback
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/api/registration-count"
+  to = "/.netlify/functions/get-registration-count"
+  status = 200
+  force = true
+
+# SPA fallback - catches all other routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

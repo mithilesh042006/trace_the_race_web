@@ -1,141 +1,236 @@
 import React, { useRef, useEffect } from "react";
 
-const Noise = ({
-  patternSize = 250, // (reserved for future scaling)
-  patternScaleX = 1,  // (reserved)
-  patternScaleY = 1,  // (reserved)
-  patternRefreshInterval = 2,
-  patternAlpha = 15,
-}) => {
-  const grainRef = useRef(null);
+/** Animated particles floating effect */
+const ParticleField = () => {
+  const canvasRef = useRef(null);
 
   useEffect(() => {
-    const canvas = grainRef.current;
+    const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d", { alpha: true });
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let frame = 0;
-    let animationId = 0;
-    const canvasSize = 1024;
+    let animationId;
+    const particles = [];
+    const particleCount = 50;
 
     const resize = () => {
-      if (!canvas) return;
-      canvas.width = canvasSize;
-      canvas.height = canvasSize;
-      // Cover viewport
-      canvas.style.width = "100vw";
-      canvas.style.height = "100vh";
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     };
 
-    const drawGrain = () => {
-      const imageData = ctx.createImageData(canvasSize, canvasSize);
-      const data = imageData.data;
-      for (let i = 0; i < data.length; i += 4) {
-        const value = Math.random() * 255;
-        data[i] = value;
-        data[i + 1] = value;
-        data[i + 2] = value;
-        data[i + 3] = patternAlpha;
+    // Create particles
+    const createParticles = () => {
+      particles.length = 0;
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 3 + 1,
+          speedX: (Math.random() - 0.5) * 0.5,
+          speedY: (Math.random() - 0.5) * 0.5,
+          opacity: Math.random() * 0.5 + 0.2,
+          hue: Math.random() > 0.5 ? 330 : 300, // Pink or Purple
+        });
       }
-      ctx.putImageData(imageData, 0, 0);
     };
 
-    const loop = () => {
-      if (frame % patternRefreshInterval === 0) drawGrain();
-      frame++;
-      animationId = window.requestAnimationFrame(loop);
+    const drawParticles = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((particle, index) => {
+        // Update position
+        particle.x += particle.speedX;
+        particle.y += particle.speedY;
+
+        // Wrap around screen
+        if (particle.x < 0) particle.x = canvas.width;
+        if (particle.x > canvas.width) particle.x = 0;
+        if (particle.y < 0) particle.y = canvas.height;
+        if (particle.y > canvas.height) particle.y = 0;
+
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${particle.hue}, 100%, 60%, ${particle.opacity})`;
+        ctx.fill();
+
+        // Draw connections to nearby particles
+        particles.forEach((otherParticle, otherIndex) => {
+          if (index === otherIndex) return;
+          const dx = particle.x - otherParticle.x;
+          const dy = particle.y - otherParticle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 150) {
+            ctx.beginPath();
+            ctx.moveTo(particle.x, particle.y);
+            ctx.lineTo(otherParticle.x, otherParticle.y);
+            ctx.strokeStyle = `rgba(255, 20, 147, ${0.1 * (1 - distance / 150)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        });
+      });
+
+      animationId = requestAnimationFrame(drawParticles);
     };
 
     window.addEventListener("resize", resize);
     resize();
-    loop();
+    createParticles();
+    drawParticles();
 
     return () => {
       window.removeEventListener("resize", resize);
-      window.cancelAnimationFrame(animationId);
+      cancelAnimationFrame(animationId);
     };
-  }, [patternSize, patternScaleX, patternScaleY, patternRefreshInterval, patternAlpha]);
+  }, []);
 
   return (
     <canvas
-      ref={grainRef}
-      className="pointer-events-none absolute inset-0"
-      style={{ imageRendering: "pixelated" }} />
+      ref={canvasRef}
+      className="absolute inset-0 pointer-events-none"
+    />
   );
 };
 
-/** Detective themed animated background with circuit patterns */
-const CircuitPattern = () => {
+/** Animated gradient orbs */
+const GradientOrbs = () => {
   return (
-    <div className="absolute inset-0 opacity-20">
-      <svg className="w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+    <div className="absolute inset-0 overflow-hidden">
+      {/* Orb 1 */}
+      <div
+        className="absolute w-96 h-96 rounded-full opacity-20"
+        style={{
+          background: 'radial-gradient(circle, rgba(255,20,147,0.4) 0%, transparent 70%)',
+          left: '10%',
+          top: '20%',
+          animation: 'float1 20s ease-in-out infinite',
+        }}
+      />
+      {/* Orb 2 */}
+      <div
+        className="absolute w-80 h-80 rounded-full opacity-15"
+        style={{
+          background: 'radial-gradient(circle, rgba(128,0,64,0.5) 0%, transparent 70%)',
+          right: '15%',
+          bottom: '30%',
+          animation: 'float2 25s ease-in-out infinite',
+        }}
+      />
+      {/* Orb 3 */}
+      <div
+        className="absolute w-64 h-64 rounded-full opacity-10"
+        style={{
+          background: 'radial-gradient(circle, rgba(147,51,234,0.4) 0%, transparent 70%)',
+          left: '50%',
+          top: '60%',
+          animation: 'float3 18s ease-in-out infinite',
+        }}
+      />
+
+      <style>{`
+        @keyframes float1 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          25% { transform: translate(50px, -30px) scale(1.1); }
+          50% { transform: translate(20px, 40px) scale(0.95); }
+          75% { transform: translate(-30px, 20px) scale(1.05); }
+        }
+        @keyframes float2 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(-40px, 30px) scale(1.1); }
+          66% { transform: translate(30px, -20px) scale(0.9); }
+        }
+        @keyframes float3 {
+          0%, 100% { transform: translate(0, 0) rotate(0deg); }
+          50% { transform: translate(-30px, -40px) rotate(180deg); }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+/** Grid pattern overlay */
+const GridPattern = () => {
+  return (
+    <div className="absolute inset-0 opacity-10">
+      <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <pattern id="circuit" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-            <circle cx="10" cy="10" r="2" fill="#ff1493" opacity="0.6">
-              <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
-            </circle>
-            <circle cx="90" cy="90" r="1.5" fill="#800040" opacity="0.4">
-              <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" />
-            </circle>
-            <line x1="10" y1="10" x2="90" y2="10" stroke="#ff1493" strokeWidth="0.5" opacity="0.3" />
-            <line x1="10" y1="10" x2="10" y2="90" stroke="#800040" strokeWidth="0.5" opacity="0.3" />
-            <line x1="10" y1="90" x2="90" y2="90" stroke="#ff1493" strokeWidth="0.5" opacity="0.2" />
-            <line x1="90" y1="10" x2="90" y2="90" stroke="#800040" strokeWidth="0.5" opacity="0.2" />
+          <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,20,147,0.3)" strokeWidth="0.5" />
           </pattern>
         </defs>
-        <rect width="100%" height="100%" fill="url(#circuit)" />
+        <rect width="100%" height="100%" fill="url(#grid)" />
       </svg>
     </div>
   );
 };
 
-const FloatingElements = () => {
+/** Floating icons */
+const FloatingIcons = () => {
+  const icons = ['⚡', '💡', '🎯', '✨', '🔗', '💫'];
+
   return (
-    <div className="absolute inset-0 overflow-hidden">
-      {[...Array(6)].map((_, i) => (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {icons.map((icon, i) => (
         <div
           key={i}
-          className="absolute animate-pulse"
+          className="absolute text-2xl opacity-5"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            left: `${15 + (i * 15)}%`,
+            top: `${20 + (i * 10)}%`,
+            animation: `iconFloat${i % 3} ${15 + i * 2}s ease-in-out infinite`,
             animationDelay: `${i * 0.5}s`,
-            animationDuration: '4s'
           }}
         >
-          <div className="text-4xl opacity-10">
-            {['🔍', '🕵️', '🔐', '💻', '🐛', '⚡'][i]}
-          </div>
+          {icon}
         </div>
       ))}
+
+      <style>{`
+        @keyframes iconFloat0 {
+          0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.05; }
+          50% { transform: translateY(-30px) rotate(10deg); opacity: 0.1; }
+        }
+        @keyframes iconFloat1 {
+          0%, 100% { transform: translateY(0) translateX(0); opacity: 0.05; }
+          50% { transform: translateY(-20px) translateX(15px); opacity: 0.08; }
+        }
+        @keyframes iconFloat2 {
+          0%, 100% { transform: translateY(0) scale(1); opacity: 0.05; }
+          50% { transform: translateY(-25px) scale(1.1); opacity: 0.1; }
+        }
+      `}</style>
     </div>
   );
 };
 
-/** Detective themed gradient + Noise background. */
+/** Main animated background component */
 export default function Component() {
   return (
     <div className="fixed inset-0 -z-10">
-      {/* Multi-layer background */}
+      {/* Base gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
-      <div className="absolute inset-0 bg-gradient-to-tr from-pink-900/20 via-transparent to-pink-800/10" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,#ff1493_0%,transparent_25%)] opacity-20" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,#800040_0%,transparent_25%)] opacity-15" />
-      
-      {/* Circuit pattern overlay */}
-      <CircuitPattern />
-      
-      {/* Floating detective elements */}
-      <FloatingElements />
-      
-      {/* Grain overlay */}
-      <Noise patternRefreshInterval={3} patternAlpha={15} />
-      
-      {/* Scanline effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-pink-500/5 to-transparent animate-pulse" 
-           style={{ animationDuration: '6s' }} />
+
+      {/* Secondary gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-pink-950/30 via-transparent to-purple-950/20" />
+
+      {/* Grid pattern */}
+      <GridPattern />
+
+      {/* Animated gradient orbs */}
+      <GradientOrbs />
+
+      {/* Particle field with connections */}
+      <ParticleField />
+
+      {/* Floating icons */}
+      <FloatingIcons />
+
+      {/* Subtle vignette */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
     </div>
   );
 }
