@@ -441,7 +441,7 @@ export default function RegisterPage({ onNavigate }) {
             <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 text-center">
               <div className="text-2xl mb-2">📅</div>
               <div className="text-xs text-white/60">Date</div>
-              <div className="text-sm font-semibold text-white">Feb 25, 2026</div>
+              <div className="text-sm font-semibold text-white">Feb 24, 2026</div>
             </div>
             <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 text-center">
               <div className="text-2xl mb-2">⏰</div>

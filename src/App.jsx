@@ -116,10 +116,11 @@ export default function App() {
             </h1>
 
             {/* Main Title */}
-            <h2 className="text-4xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto md:text-6xl bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
-              THE AFTER EFFECT
+            <h2 className="text-2xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto md:text-6xl bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
+              <span className="whitespace-nowrap">THE AFTER EFFECT</span>
+              <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff1493] to-[#800040]">
-                {" "}Where Logic is Inherited
+                Where Logic is Inherited
               </span>
             </h2>
 
@@ -133,7 +134,7 @@ export default function App() {
               <div className="text-pink-300 text-sm mb-4 font-semibold tracking-wide">
                 ⏰ THE COUNTDOWN BEGINS ⚡
               </div>
-              <CountdownTimer targetDate="2026-02-25T10:00:00" />
+              <CountdownTimer targetDate="2026-02-24T10:00:00" />
             </div>
 
             {/* Registration Progress Slider - Fetches real-time count from Netlify API */}
@@ -311,7 +312,7 @@ export default function App() {
             <div className="bg-gradient-to-br from-pink-900/30 to-black/50 p-6 rounded-xl border border-pink-500/30 hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300">
               <div className="text-3xl mb-3">📅</div>
               <div className="text-pink-300 font-semibold text-sm">DATE</div>
-              <div className="text-white font-bold">25th February 2026</div>
+              <div className="text-white font-bold">24th February 2026</div>
             </div>
             <div className="bg-gradient-to-br from-pink-900/30 to-black/50 p-6 rounded-xl border border-pink-500/30 hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300">
               <div className="text-3xl mb-3">⏰</div>
