@@ -8,7 +8,7 @@ createRoot(document.getElementById('root')).render(
     <div>
       <App />
       <footer className="bg-black/70 py-5 text-center text-xs relative z-30">
-        <p>© 2025 Trace-The-Race. All rights reserved.</p>
+        <p>© 2026 THE-AFTER-EFFECT. All rights reserved.</p>
       </footer>
     </div>
   </StrictMode>,
