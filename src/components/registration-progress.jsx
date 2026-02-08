@@ -63,7 +63,7 @@ const RegistrationProgress = ({ maxRegistrations = 30, refreshInterval = 30000 }
                 {/* Header */}
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
-                        <span className="text-2xl">📊</span>
+                        {/* <span className="text-2xl">📊</span> */}
                         <h3 className="text-pink-300 text-sm md:text-base font-semibold tracking-wide">
                             REGISTRATION STATUS
                         </h3>
@@ -165,13 +165,13 @@ const RegistrationProgress = ({ maxRegistrations = 30, refreshInterval = 30000 }
                 )}
 
                 {/* Last updated */}
-                {lastUpdated && (
+                {/* {lastUpdated && (
                     <div className="mt-3 text-center">
                         <span className="text-xs text-white/30">
                             Last updated: {lastUpdated.toLocaleTimeString()}
                         </span>
                     </div>
-                )}
+                )} */}
             </div>
 
             {/* CSS Keyframes */}
