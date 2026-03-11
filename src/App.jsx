@@ -3,6 +3,7 @@ import BackgroundComponent from "./components/background-snippets-noise-effect11
 import { HeroSection } from "./components/hero-section-dark";
 import CountdownTimer from "./components/countdown-timer";
 import RegistrationProgress from "./components/registration-progress";
+import InspirationCards from "./components/inspiration-cards";
 import RegisterPage from "./Register";
 
 export default function App() {
@@ -157,6 +158,9 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      {/* Words of Inspiration */}
+      <InspirationCards />
 
       {/* About */}
       <section
@@ -327,7 +331,7 @@ export default function App() {
             <div className="bg-gradient-to-br from-pink-900/30 to-black/50 p-6 rounded-xl border border-pink-500/30 hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300">
               <div className="text-3xl mb-3">⚡</div>
               <div className="text-pink-300 font-semibold text-sm">DURATION</div>
-              <div className="text-white font-bold text-sm">5 Hours of Impact</div>
+              <div className="text-white font-bold text-sm">6 Hours of Impact</div>
             </div>
           </div>
         </div>
