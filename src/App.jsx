@@ -120,7 +120,7 @@ export default function App() {
               <span className="whitespace-nowrap">THE AFTER EFFECT</span>
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff1493] to-[#800040]">
-                Where Logic is Inherited
+                Where Logic is Inheriteddd
               </span>
             </h2>
 
