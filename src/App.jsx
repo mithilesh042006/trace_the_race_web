@@ -111,9 +111,9 @@ export default function App() {
             {/* Mission Badge */}
             <h1 className="text-sm text-gray-600 dark:text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/20 via-gray-400/20 to-transparent dark:from-zinc-300/5 dark:via-gray-400/5 border-[2px] border-black/5 dark:border-white/5 rounded-3xl w-fit">
               ⚡ Every decision has an after effect…
-              <svg className="inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {/* <svg className="inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              </svg> */}
             </h1>
 
             {/* Main Title */}
@@ -124,6 +124,9 @@ export default function App() {
                 Where Logic is Inherited
               </span>
             </h2>
+            <p className="text-white/50 text-sm md:text-base mt-2 tracking-wide">
+              Jeppiaar Engineering College
+            </p>
 
             {/* Description */}
             <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-sm md:text-base px-4 md:px-0 break-words">
@@ -326,7 +329,7 @@ export default function App() {
             <div className="bg-gradient-to-br from-pink-900/30 to-black/50 p-6 rounded-xl border border-pink-500/30 hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300">
               <div className="text-3xl mb-3">🏢</div>
               <div className="text-pink-300 font-semibold text-sm">VENUE</div>
-              <div className="text-white font-bold text-sm">Chamber 3, Library Block</div>
+              <div className="text-white font-bold text-sm">Chamber 3, Library Block, jeppiaar engineering college</div>
             </div>
             <div className="bg-gradient-to-br from-pink-900/30 to-black/50 p-6 rounded-xl border border-pink-500/30 hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300">
               <div className="text-3xl mb-3">⚡</div>
@@ -349,7 +352,7 @@ export default function App() {
       </section>
 
       {/* Contact */}
-      <section
+      {/* <section
         id="contact"
         className="py-24 px-5 max-w-4xl mx-auto text-center animate-fade-in-up relative z-20"
       >
@@ -360,8 +363,59 @@ export default function App() {
           Mahalakshmi P: +91 9840261279
           <br />
           Rubendra S: +91 8072426629
-        </p>
-      </section>
+        </p> */}
+
+        {/* Address */}
+        {/* <div className="inline-flex flex-col items-center gap-1 bg-white/5 border border-pink-500/20 rounded-2xl px-8 py-5 text-sm">
+          <span className="text-2xl mb-1">📍</span>
+          <span className="text-white font-semibold">Jeppiaar Engineering College</span>
+          <span className="text-white/60">Old Mahabalipuram Road</span>
+          <span className="text-white/60">Chennai – 600 119</span>
+          <span className="text-white/60">Tamil Nadu, India</span>
+        </div>
+      </section> */}
+
+      {/* Footer */}
+      <footer className="relative z-20 border-t border-pink-500/15 mt-8">
+        <div className="max-w-6xl mx-auto px-5 py-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-sm">
+
+            {/* Brand */}
+            <div className="flex flex-col items-center md:items-start gap-3">
+              <div className="flex items-center gap-2">
+                <img src="/logo.png" alt="logo" className="h-8 w-auto" />
+                <span className="text-pink-400 font-bold text-lg tracking-wide">THE AFTER EFFECT</span>
+              </div>
+              <p className="text-white/40 text-xs text-center md:text-left">
+                Where logic is inherited, not erased.
+              </p>
+            </div>
+
+            {/* Address */}
+            <div className="flex flex-col items-center gap-1 text-center">
+              <span className="text-pink-300 font-semibold text-xs uppercase tracking-widest mb-2">📍 Venue</span>
+              <span className="text-white/80 font-medium">Jeppiaar Engineering College</span>
+              <span className="text-white/50 text-xs">Old Mahabalipuram Road</span>
+              <span className="text-white/50 text-xs">Chennai – 600 119, Tamil Nadu, India</span>
+            </div>
+
+            {/* Contact */}
+            <div className="flex flex-col items-center md:items-end gap-1 text-center md:text-right">
+              <span className="text-pink-300 font-semibold text-xs uppercase tracking-widest mb-2">📞 Contact</span>
+              <span className="text-white/80 text-xs">Mahalakshmi P: +91 9840261279</span>
+              <span className="text-white/80 text-xs">Rubendra S: +91 8072426629</span>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="h-px bg-gradient-to-r from-transparent via-pink-500/30 to-transparent mb-6" />
+
+          {/* Copyright */}
+          <p className="text-center text-white/30 text-xs">
+            © 2026 THE-AFTER-EFFECT. All rights reserved.
+          </p>
+        </div>
+      </footer>
 
     </>
   );

@@ -7,9 +7,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <div>
       <App />
-      <footer className="bg-black/70 py-5 text-center text-xs relative z-30">
+      {/* <footer className="bg-black/70 py-5 text-center text-xs relative z-30">
         <p>© 2026 THE-AFTER-EFFECT. All rights reserved.</p>
-      </footer>
+      </footer> */}
     </div>
   </StrictMode>,
 )

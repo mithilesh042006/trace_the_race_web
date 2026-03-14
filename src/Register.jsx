@@ -451,7 +451,7 @@ export default function RegisterPage({ onNavigate }) {
             <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 text-center">
               <div className="text-2xl mb-2">📍</div>
               <div className="text-xs text-white/60">Venue</div>
-              <div className="text-sm font-semibold text-white">Chamber 3</div>
+              <div className="text-sm font-semibold text-white">Chamber 3, Library Block</div>
             </div>
             <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-4 border border-white/10 text-center">
               <div className="text-2xl mb-2">🎫</div>
@@ -459,6 +459,47 @@ export default function RegisterPage({ onNavigate }) {
               <div className="text-sm font-semibold text-green-400">FREE</div>
             </div>
           </div>
+          {/* Footer */}
+      <footer className="relative z-20 border-t border-pink-500/15 mt-8">
+        <div className="max-w-6xl mx-auto px-5 py-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-sm">
+
+            {/* Brand */}
+            <div className="flex flex-col items-center md:items-start gap-3">
+              <div className="flex items-center gap-2">
+                <img src="/logo.png" alt="logo" className="h-8 w-auto" />
+                <span className="text-pink-400 font-bold text-lg tracking-wide">THE AFTER EFFECT</span>
+              </div>
+              <p className="text-white/40 text-xs text-center md:text-left">
+                Where logic is inherited, not erased.
+              </p>
+            </div>
+
+            {/* Address */}
+            <div className="flex flex-col items-center gap-1 text-center">
+              <span className="text-pink-300 font-semibold text-xs uppercase tracking-widest mb-2">📍 Venue</span>
+              <span className="text-white/80 font-medium">Jeppiaar Engineering College</span>
+              <span className="text-white/50 text-xs">Old Mahabalipuram Road</span>
+              <span className="text-white/50 text-xs">Chennai – 600 119, Tamil Nadu, India</span>
+            </div>
+
+            {/* Contact */}
+            <div className="flex flex-col items-center md:items-end gap-1 text-center md:text-right">
+              <span className="text-pink-300 font-semibold text-xs uppercase tracking-widest mb-2">📞 Contact</span>
+              <span className="text-white/80 text-xs">Mahalakshmi P: +91 9840261279</span>
+              <span className="text-white/80 text-xs">Rubendra S: +91 8072426629</span>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="h-px bg-gradient-to-r from-transparent via-pink-500/30 to-transparent mb-6" />
+
+          {/* Copyright */}
+          <p className="text-center text-white/30 text-xs">
+            © 2026 THE-AFTER-EFFECT. All rights reserved.
+          </p>
+        </div>
+      </footer>
         </div>
       </div>
     </>
