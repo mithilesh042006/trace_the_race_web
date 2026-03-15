@@ -222,6 +222,80 @@ export default function App() {
         </div>
       </section>
 
+      {/* Event Description */}
+      <section className="py-12 md:py-20 px-5 max-w-5xl mx-auto relative z-20">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs mb-4">
+            ⚡ Event Description
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-white">THE AFTER EFFECT</h2>
+          <p className="text-white/50 text-sm mt-2 max-w-2xl mx-auto">
+            Two dynamic phases designed to test analytical thinking, adaptability, and logical design.
+          </p>
+        </div>
+
+        {/* Phases */}
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          {/* Phase 1 */}
+          <div className="bg-gradient-to-br from-black/60 to-pink-900/20 rounded-2xl p-6 border border-pink-500/20 backdrop-blur-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center text-pink-400 font-bold text-sm flex-shrink-0">
+                01
+              </div>
+              <div>
+                <div className="text-xs text-pink-300 uppercase tracking-widest">Phase 1</div>
+                <div className="text-white font-bold">Analyze &amp; Build</div>
+              </div>
+            </div>
+            <p className="text-white/70 text-sm leading-relaxed">
+              Teams will receive a real-world inspired and slightly tricky problem statement. They must <span className="text-pink-300 font-medium">analyze the scenario</span> and design the core backend logic along with a short documentation.
+            </p>
+          </div>
+
+          {/* Phase 2 */}
+          <div className="bg-gradient-to-br from-black/60 to-pink-900/20 rounded-2xl p-6 border border-pink-500/20 backdrop-blur-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center text-pink-400 font-bold text-sm flex-shrink-0">
+                02
+              </div>
+              <div>
+                <div className="text-xs text-pink-300 uppercase tracking-widest">Phase 2</div>
+                <div className="text-white font-bold">Analyze &amp; Evolve</div>
+              </div>
+            </div>
+            <p className="text-white/70 text-sm leading-relaxed">
+              Problem statements will be <span className="text-pink-300 font-medium">swapped between teams</span>. Participants will receive another team's solution and must analyze the logic before extending or improving it by adding new features or handling additional constraints.
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom row */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Scoring + Surprise */}
+          <div className="bg-gradient-to-br from-pink-900/30 to-black/50 rounded-2xl p-5 border border-pink-500/20 flex items-start gap-4">
+            <span className="text-2xl">🏆</span>
+            <div>
+              <div className="text-white font-semibold text-sm mb-1">Combined Scoring</div>
+              <p className="text-white/60 text-xs leading-relaxed">
+                The final score will combine performance from both phases. Expect <span className="text-yellow-400 font-medium">surprise elements</span> throughout the challenge.
+              </p>
+            </div>
+          </div>
+
+          {/* AI Note */}
+          <div className="bg-gradient-to-br from-yellow-900/20 to-black/50 rounded-2xl p-5 border border-yellow-500/20 flex items-start gap-4">
+            <span className="text-2xl">🤖</span>
+            <div>
+              <div className="text-yellow-300 font-semibold text-sm mb-1">Note on AI Tools</div>
+              <p className="text-white/60 text-xs leading-relaxed">
+                Participants must perform all <span className="text-yellow-300 font-medium">analysis on their own</span> without AI tools. AI tools may be used <span className="text-yellow-300 font-medium">only for building or modifying</span> the solution.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Challenge at a Glance */}
       <section
         id="challenge"
