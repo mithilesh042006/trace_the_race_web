@@ -142,7 +142,7 @@ export default function App() {
             </div>
 
             {/* Registration Progress Slider - Fetches real-time count from Netlify API */}
-            <RegistrationProgress maxRegistrations={30} refreshInterval={30000} />
+            {/* <RegistrationProgress maxRegistrations={30} refreshInterval={30000} /> */}
 
             {/* CTA Button */}
             <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
